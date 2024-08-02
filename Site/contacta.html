@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ah Long Financial Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    body {
+        font-family: Arial;
+        font-size:24px;
+    }
+
+    #updatebutton {
+        list-style: none;
+        background-color: yellow;
+        padding: 20px; 
+        text-align: center; 
+        width: 10%;
+        margin:auto;
+        border: 1px solid black;
+        font-size: 20px;;
+        }  
+    </style>
+</head>
+<body>
+    <header>
+        <a href="settings1.html"><img src="../images/backbutton.png" alt="Back Button"></a>   
+    </header>
+    <h1>Contact Details</h1>
+    <hr>
+    <section id="contactdetails">
+        <h3>Mobile Number</h3>
+        <p id="mobile"></p>
+        <h3>Home Number</h3>
+        <p id="home"></p>
+        <h3>Email Address</h3>
+        <p id="email"></p>
+    </section>
+    <br>
+    <div class="update" onclick="update()">
+        <section id="updatebutton">
+            <b>UPDATE</b>
+        </section>
+    </div>
+    <script>
+        // Retrieve each item separately from loan
+        const mobile = localStorage.getItem('mobile');
+        const home = localStorage.getItem('home');
+        const email = localStorage.getItem('email');
+        document.getElementById('mobile').innerHTML = `${mobile}`;
+        document.getElementById('home').innerHTML = `${home}`;
+        document.getElementById('email').innerHTML = `${email}`;
+        console.log(`mobile/Region: ${mobile}`);
+        console.log(`Address: ${home}`);
+        console.log(`Postal email: ${email}`);
+        function update(){
+            window.location.href='updatecontact.html'
+        }
+    </script>
+</body>

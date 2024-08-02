@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ah Long Financial Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    .navbar {
+        background: rgba(96,96,96,255);
+        /* Fixes position at the bottom of the screen */
+        position: fixed; 
+        bottom:0;
+        padding: 1px;
+        width: 99%; 
+    }
+    .navbar-menu {
+        display: flex; /* Keeps the navbar aligned horizontally */
+    }
+
+    .navbar-menu li {
+        list-style: none;
+        margin: 0 130px; /* Space between menu items */
+    }
+    body {
+        font-family: Arial;
+        text-align: left;
+        font-size: 24px;
+    }
+    header {
+        background: radial-gradient(circle,rgb(48, 75, 110),rgb(4, 16, 32));
+        color:white;
+        text-align: center;
+        font-size: 30px;
+    }
+    header img {
+        display:block;
+        align-items: left;
+    }
+    #backbutton {
+        padding: 8px;
+        width:60px;   
+    }
+    #loan {
+        padding: 50px 20px;
+    }
+
+    #loan form {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding:8px;
+        max-width: 500px;
+        gap: 15px; /* Space between elements */
+        font-family:Arial;
+    }
+
+    #loan form input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    #loan form button {
+        width:66%;
+        padding: 6px;
+        font-size: 20px;
+        background-color: yellow;
+        border: 1px solid black;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="home2.html"><img src="../images/backbutton.png" alt="Back Button"></a>
+        <img src="../images/logo.png" alt="Logo Image"> 
+        LOAN APPLICATION
+    </header>
+    <section id="loan">
+        <form id="loan-form">
+            <label for="loanamount"><b>Loan Amount:</b></label>
+            <input type="number" id="loanamount" name="loanamount" required>
+            <label for="loanstartdate"><b>Loan Start Date:</b></label>
+            <input type="date" id="loanstartdate" name="loanstartdate" required>
+            <label for="loanduedate"><b>Loan Due Date:</b></label>
+            <input type="date" id="loanduedate" name="loanduedate" required>
+            <label for="loaninterest"><b>Loan Interest:</b></label>
+            <input type="text" id="loaninterest" name="loaninterest" value="6.9%" readonly>
+            _____________________________________________________________________________________
+            <h2>Bank Details</h2>
+            <label for="name"><b>Bank Account Holder:</b></label>
+            <input type="text" id="name" name="name" required>
+            <label for="account"><b>Bank Account:</b></label>
+            <input type="number" id="account" name="account" minlength="10" maxlength="10" required>
+            <button type="submit"><b>APPLY LOAN</b></button>
+        </form>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+
+        <script>
+            document.getElementById('loan-form').addEventListener('submit', function(event) {
+                const loanstartdate = document.getElementById('loanstartdate').value;
+                const loanduedate = document.getElementById('loanduedate').value;
+                const loanamount = parseFloat(document.getElementById('loanamount').value);
+                const name= document.getElementById('name').value;
+                const account = document.getElementById('account').value;
+                //Convert form value into time
+                const startDate = new Date(loanstartdate);
+                const dueDate = new Date(loanduedate);
+                if (startDate < dueDate && loanamount >= 1000) {
+                    event.preventDefault();
+                        // Store each form field separately
+                        localStorage.setItem('loanamount', document.getElementById('loanamount').value);
+                        localStorage.setItem('loanstartdate', document.getElementById('loanstartdate').value);
+                        localStorage.setItem('loanduedate', document.getElementById('loanduedate').value);
+                        localStorage.setItem('loaninterest', document.getElementById('loaninterest').value);
+                        localStorage.setItem('name', document.getElementById('name').value);
+                        localStorage.setItem('account', document.getElementById('account').value);
+                        window.location.href = 'loanconfirmationpage.html';  
+                } 
+                else {
+                    alert("Please ensure that details are filled in correctly and your loan amount is at least $1000.")
+                }
+            });
+        </script>
+</body>
+<footer>
+    <nav class="navbar">
+        <ul class="navbar-menu">
+            <li><a href="home2.html"><img src="../navbarimg/home.png" alt="Home"></a></li>
+            <li><a href="history.html"><img src="../navbarimg/history.png" alt="History"></a></a></li>
+            <li><a href="loan.html"><img src="../navbarimg/loan.png" alt="Loan"></a></a></li>
+            <li><a href="news.html"><img src="../navbarimg/news.png" alt="News"></a></a></li>
+            <li><a href="settings.html"><img src="../navbarimg/settings.png" alt="Settings"></a></a></li>
+        </ul>
+    </nav>
+</footer>

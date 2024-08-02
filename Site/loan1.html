@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ah Long Financial Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    .navbar {
+        background: rgba(96,96,96,255);
+        /* Fixes position at the bottom of the screen */
+        position: fixed; 
+        bottom:0;
+        padding: 1px;
+        width: 99%; 
+    }
+    .navbar-menu {
+        display: flex; /* Keeps the navbar aligned horizontally */
+    }
+
+    .navbar-menu li {
+        list-style: none;
+        margin: 0 130px; /* Space between menu items */
+    }
+    body {
+        font-family: Arial;
+        text-align: left;
+        font-size: 24px;
+    }
+    header {
+        background: radial-gradient(circle,rgb(48, 75, 110),rgb(4, 16, 32));
+        color:white;
+        text-align: center;
+        font-size: 30px;
+    }
+    header img {
+        display:block;
+        align-items: left;
+    }
+    #backbutton {
+        padding: 8px;
+        width:60px;   
+    }
+    #loan {
+        padding: 50px 20px;
+    }
+
+    #loan form {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding:8px;
+        max-width: 500px;
+        gap: 15px; /* Space between elements */
+        font-family:Arial;
+    }
+
+    #loan form input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    #loan form button {
+        width:66%;
+        padding: 6px;
+        font-size: 20px;
+        background-color: yellow;
+        border: 1px solid black;
+    }
+
+    #paymentbutton {
+        list-style: none;
+        background-color: yellow;
+        padding: 20px; 
+        text-align: center; 
+        width: 10%;
+        margin:auto;
+        border: 1px solid black;
+        font-size: 20px;;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="home1.html"><img src="../images/backbutton.png" alt="Back Button"></a>
+        <img src="../images/logo.png" alt="Logo Image"> 
+        LOAN APPLICATION
+    </header>
+    <section id="loan">
+        <form id="loan-form">
+            <label for="loanamoun"><b>Loan Amount:</b></label>
+            <input type="number" id="loanamoun" name="loanamoun" required>
+            <label for="loanstartdat"><b>Loan Start Date:</b></label>
+            <input type="date" id="loanstartdat" name="loanstartdat" required>
+            <label for="loanduedat"><b>Loan Due Date:</b></label>
+            <input type="date" id="loanduedat" name="loanduedat" required>
+            <label for="loaninteres"><b>Loan Interest:</b></label>
+            <input type="text" id="loaninteres" name="loaninteres" value="6.9%" readonly>
+            _____________________________________________________________________________________
+            <h2>Bank Details</h2>
+            <label for="nam"><b>Bank Account Holder:</b></label>
+            <input type="text" id="nam" name="nam" required>
+            <label for="accoun"><b>Bank Account:</b></label>
+            <input type="number" id="accoun" name="accoun" minlength="10" maxlength="10" required>
+        </form>
+        <div class="deny" onclick="deny()">
+            <section id="paymentbutton">
+                <b>APPLY LOAN</b>
+            </section>
+        </div>  
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <script>
+    function deny(){
+        alert("Please pay off your previous loan before applying.");
+    }
+    </script>
+</body>
+<footer>
+    <nav class="navbar">
+        <ul class="navbar-menu">
+            <li><a href="home1.html"><img src="../navbarimg/home.png" alt="Home"></a></li>
+            <li><a href="history1.html"><img src="../navbarimg/history.png" alt="History"></a></a></li>
+            <li><a href="loan1.html"><img src="../navbarimg/loan.png" alt="Loan"></a></a></li>
+            <li><a href="news1.html"><img src="../navbarimg/news.png" alt="News"></a></a></li>
+            <li><a href="settings.html"><img src="../navbarimg/settings.png" alt="Settings"></a></a></li>
+        </ul>
+    </nav>
+</footer>

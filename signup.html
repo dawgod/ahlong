@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ah Long Financial Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    header {
+        text-align: center;
+    }
+
+    body {
+        background: radial-gradient(circle, rgb(15, 15, 15),rgb(19, 38, 80));
+        text-align: center;
+        font-family:Arial;
+    }
+    
+    #backbutton {
+        background-color: grey;
+        color: white;
+        padding: 8px;
+        width:60px;
+        text-align: center;        
+    }
+    #backbutton a {
+        text-decoration: none;
+        color: white;
+        text-align: center;     
+    }
+
+    #signup {
+            padding: 40px 20px;
+            text-align: center;
+            color:white;
+        }
+
+        #signup h2 {
+            color: white;
+        }
+
+        #signup form {
+            display: inline-block;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        #signup form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        #signup form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #signup form button {
+            width:66%;
+            padding: 6px;
+            font-size: 20px;
+            border: 1px solid #ff0000;
+            background-color: #ff0000;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <section id="backbutton">
+            <a href="index.html"><b><- Back</b></a>
+        </section>
+        <img src="images/logo.png" alt="Logo Image">
+    </header>
+    
+    <section id="signup">
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+            <label for="new-nric"><b>NRIC:</b></label>
+            <input type="text" id="new-nric" name="new-nric" required>
+            <label for="new-username"><b>Username:</b></label>
+            <input type="text" id="new-username" name="new-username" required>
+            <label for="new-password"><b>Password</b></label>
+            <input type="password" id="new-password" name="new-password" required>
+            <label for="confirm-password"><b>Confirm Password:</b></label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+            <button type="submit"><b>Sign Up</b></button>
+        </form>
+    </section>
+
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', function(event) {
+            // Validate the form (additional validation can be added here)
+            const newNric = document.getElementById('new-nric').value;
+            const newUsername = document.getElementById('new-username').value;
+            const newPassword = document.getElementById('new-password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            if (newNric && newUsername && newPassword && confirmPassword && newPassword === confirmPassword) {
+                event.preventDefault();
+                // Redirect to login page after sign up
+                alert("Sign Up Complete!")
+                window.location.href = 'index.html';
+            } 
+            else {
+                alert('Passwords do not match');
+            }
+        });
+    </script>

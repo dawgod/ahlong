@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ah Long Financial Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+    header {
+        background: radial-gradient(circle,rgb(48, 75, 110),rgb(4, 16, 32));
+        display:flex;
+        text-align: center;
+        color: white;
+        padding: 1px ;
+        font-family: Arial;
+        font-size: 20px;
+    }
+
+    body {
+        font-family: Arial;
+    }
+
+    header img {
+        display:block;
+        align-items: left;
+    }
+
+    #bankbalance {
+        background: radial-gradient(circle,rgb(48, 75, 110),rgb(4, 16, 32));
+        color: white;
+        padding: 1px;
+        text-align: center;
+        font-size: 30px;
+    }
+
+    #bankbalance h1 {
+        font-size: 80px;
+    }
+
+    #bankbalance #date {
+        background: radial-gradient(circle,rgb(48, 75, 110),rgb(4, 16, 32));
+        color: white;
+        padding: 1px;
+        text-align: center;
+        font-size: 15px;
+    }
+
+    #loandetails {
+        text-align: center;
+        font-size: 25px;
+    }
+    #loandetails #loanamount {
+        font-size: 80px;
+    }
+
+    #loandetails #loandates{
+        text-align: left;
+        font-size: 25px;
+    }
+
+    #details {
+            background-color: yellow;
+            padding: 8px; 
+            text-align: center; 
+            width: 10%;
+            margin:auto;
+            border: 1px solid black;
+        }
+    
+    #news {
+        text-align: center;
+        list-style: none;
+        font-size: 30px;
+    }
+
+    .navbar {
+        background: rgba(96,96,96,255);
+        /* Fixes position at the bottom of the screen */
+        position: fixed; 
+        bottom:0;
+        padding: 1px;
+    }
+    .navbar-menu {
+        display: flex; /* Keeps the navbar aligned horizontally */
+    }
+
+    .navbar-menu li {
+        list-style: none;
+        margin: 0 130px; /* Space between menu items */
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="../images/logo.png" alt="Logo Image"><h1>WELCOME BACK, YURI ASA!</h1>
+    </header>
+
+    <section id="bankbalance">
+        <p><b>BANK BALANCE:</b></p>
+        <h1><p id="result"></p></h1>
+        <section id="date">
+            <p><span id="update"></span></p>
+        </section>
+    </section>
+
+    <section id="loandetails">
+        <p><b>CURRENT LOAN:</b></p>
+        <section id="loanamount">
+            <b><p id=loanamount></p></b>
+        </section>
+        <section id="loandates">
+            <p id="loanstartdate"></p>
+            <p id="loanduedate"></p>
+            <p id="loaninterest"></p>
+        </section>
+        <div class="details" onclick="details()">
+            <section id="details">
+                <b>DETAILS</b>
+            </section>
+        </div>
+    </section>
+    
+    <hr>
+
+    <section id="news">
+        <h1>Recent News</h1>
+        <li><a href="https://www.channelnewsasia.com/podcasts/choose-best-bank-personal-finance-investment-interest-rates-money-talks-4109886">
+            <img src="https://onecms-res.cloudinary.com/image/upload/s--geO-TwSg--/c_fill,g_auto,h_468,w_830/f_auto,q_auto/v1/mediacorp/cna/image/2022/07/01/MONEY%20TALKS%201%20(1).jpg?itok=J-kSN6Ko" alt="News Article">
+        </a></li>
+        <p>Money Talks Podcast: Choosing the best bank for you</p>
+        <br>
+        <li><a href="https://www.channelnewsasia.com/business/renaults-first-half-profit-beats-estimates-sticks-2024-outlook-4502431">
+            <img src="https://onecms-res.cloudinary.com/image/upload/s--OkHLpclr--/c_fill,g_auto,h_468,w_830/fl_relative,g_south_east,l_mediacorp:cna:watermark:2024-04:reuters_1,w_0.1/f_auto,q_auto/v1/one-cms/core/2024-07-24t160204z_1_lynxmpek6n0ss_rtroptp_3_renault-search-stocks.jpg?itok=kSetoEb-" alt="News Article">
+        </a></li>
+        <p>Renault's first-half profit beats estimates, sticks to 2024 outlook</p>
+        <br>
+        <li><a href="https://fintechnews.sg/96256/wealthtech/how-wealthtech-is-changing-the-game-in-singapores-financial-planning-landscape/">
+            <img src="https://fintechnews.sg/wp-content/uploads/2024/05/How-Wealthtech-Tools-are-Changing-the-Game-in-Singapores-Financial-Planning-Landscape.jpg" alt="News Article" width="846">
+        </a></li>
+        <p>How Wealthtech is Changing the Game in Singapore's Financial Planning Landscape</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </section>
+
+    <hr>
+
+    <script>
+        var lastupdate = "Last Updated:" + " " + new Date();
+        document.getElementById("update").innerHTML = lastupdate;
+        // Retrieve each item separately from loan
+        const loanamount = localStorage.getItem('loanamount');
+        const loanstartdate = localStorage.getItem('loanstartdate');
+        const loanduedate = localStorage.getItem('loanduedate');
+        const loaninterest = localStorage.getItem('loaninterest');
+        const name = localStorage.getItem('name');
+        const account = localStorage.getItem('account');
+        document.getElementById('loanamount').innerHTML = `$${loanamount}`;
+        document.getElementById('loanstartdate').innerHTML = `Start Date: ${loanstartdate}`;
+        document.getElementById('loanduedate').innerHTML = `Due Date: ${loanduedate}`;
+        document.getElementById('loaninterest').innerHTML = `Interest: ${loaninterest}`;
+        console.log(`Loan Amount: $${loanamount}`);
+        console.log(`Loan Start Date: ${loanstartdate}`);
+        console.log(`Loan Due Date: ${loanduedate}`);
+        console.log(`Loan Interest: ${loaninterest}`);
+        const x = parseFloat(localStorage.getItem('loanamount'));
+        var result= x + 24.81;
+        document.getElementById('result').innerHTML= `$${result}`;
+        function details() {
+            window.location.href='details1.html'
+        }
+    </script>
+</body>
+
+<footer>
+    <nav class="navbar">
+        <ul class="navbar-menu">
+            <li><a href="home1.html"><img src="../navbarimg/home.png" alt="Home"></a></li>
+            <li><a href="history1.html"><img src="../navbarimg/history.png" alt="History"></a></a></li>
+            <li><a href="loan1.html"><img src="../navbarimg/loan.png" alt="Loan"></a></a></li>
+            <li><a href="news1.html"><img src="../navbarimg/news.png" alt="News"></a></a></li>
+            <li><a href="settings.html"><img src="../navbarimg/settings.png" alt="Settings"></a></a></li>
+        </ul>
+    </nav>
+</footer>

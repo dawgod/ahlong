@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ah Long Financial Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial;
+            font-size:24px;
+        }
+        #update {
+            font-size: 14px;
+        }
+        #simulateupdate {
+            font-size: 40px;
+            color:white
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="settings.html"><img src="../images/backbutton.png" alt="Back Button"></a>   
+    </header>
+    <h1>Personal Details</h1>
+    <hr>
+    <h3>Name</h3>
+    <p>Yuri Asa</p>
+    <h3>NRIC</h3>
+    <p>T0092833T</p>
+    <h3>Date of birth</h3>
+    <p>1 April 2000</p>
+    <h3>Nationality</h3>
+    <p>Indonesian</p>
+    <h3>Gender</h3>
+    <p>Female</p>
+    <br>
+    <section id="update">
+        <b>Update Personal Detail with <a href='https://login.singpass.gov.sg/main?scope=openid&response_type=code&redirect_uri=https%3A%2F%2Fwww.singpass.gov.sg%2Fhome%2Fui%2Fcallback%2Fauth&state=48c8749f-6cfd-4a5d-bd86-b9208e0fcee8&nonce=3c537362-402e-49eb-8c12-202ac22b6cef&client_id=ntmRnh1tflHVnWsik9AN1Fn2Cx7X8gVw&pwd_enabled=true'
+        >Singpass</a></b>
+    </section>
+    <div class="simulateupdate" onclick="update()">
+        <section id="simulateupdate">
+            <p>...</p>
+        </section>
+    </div>
+    <script>
+        function update(){
+            alert("Updated with Singpass")
+            window.location.href = 'personala.html'; 
+        }
+        </script>
+</body>

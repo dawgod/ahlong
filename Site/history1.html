@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ah Long Financial Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    .navbar {
+        background: rgba(96,96,96,255);
+        /* Fixes position at the bottom of the screen */
+        position: fixed; 
+        bottom:0;
+        padding: 1px;
+        width: 99%; 
+    }
+    .navbar-menu {
+        display: flex; /* Keeps the navbar aligned horizontally */
+    }
+
+    .navbar-menu li {
+        list-style: none;
+        margin: 0 130px; /* Space between menu items */
+    }  
+    header {
+        background-color: grey;
+        text-align: center;
+        color:white;
+        font-family: Arial;
+    } 
+
+    body {
+        background: radial-gradient(circle,rgb(48, 75, 110),rgb(4, 16, 32));
+        text-align: center;
+        font-family: Arial;
+        font-size: 20px;
+    }  
+    #section1 {
+        background-color: white;
+        padding:15px;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="../images/logo.png" alt="Logo Image"> 
+        <h1>LOAN HISTORY</h1>  
+    </header>
+    <section id="section1">
+        <b><p id="loanstartdate"></p></b>
+        <b><p id="loanamount"></p></b>
+        <p><b>Active Loan</b></p>
+    </section>
+    <p><b>2024-01-01</b></p>
+    <p><b>Loan Amount: $3000</b></p>
+    <p><b>Paid On 2024-05-05</b></p>
+    <section id="section1">
+        <p><b>2023-06-11</b></p>
+        <p><b>Loan Amount: $5000</b></p>
+        <p><b>Paid On 2023-12-25</b></p>
+    </section>
+    <p><b>2023-01-10</b></p>
+    <p><b>Loan Amount: $1000</b></p>
+    <p><b>Paid On 2023-04-20</b></p>
+    <section id="section1">
+        <p><b>2023-10-10</b></p>
+        <p><b>Loan Amount: $5000</b></p>
+        <p><b>Paid On 2023-12-20</b></p>
+    </section>   
+    <p><b>2022-02-01</b></p>
+    <p><b>Loan Amount: $5000</b></p>
+    <p><b>Paid On 2022-09-01</b></p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <script>
+        const loanamount = localStorage.getItem('loanamount');
+        const loanstartdate = localStorage.getItem('loanstartdate');
+        const loanduedate = localStorage.getItem('loanduedate');;
+        document.getElementById('loanamount').innerHTML = `Loan Amount: $${loanamount}`;
+        document.getElementById('loanstartdate').innerHTML = `${loanstartdate}`;
+    </script>
+</body>
+
+<footer>
+    <nav class="navbar">
+        <ul class="navbar-menu">
+            <li><a href="home1.html"><img src="../navbarimg/home.png" alt="Home"></a></li>
+            <li><a href="history1.html"><img src="../navbarimg/history.png" alt="History"></a></a></li>
+            <li><a href="loan1.html"><img src="../navbarimg/loan.png" alt="Loan"></a></a></li>
+            <li><a href="news1.html"><img src="../navbarimg/news.png" alt="News"></a></a></li>
+            <li><a href="settings.html"><img src="../navbarimg/settings.png" alt="Settings"></a></a></li>
+        </ul>
+    </nav>
+</footer>
