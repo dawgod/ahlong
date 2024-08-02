@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ah Long Financial Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    header {
+        text-align: center;
+    }
+
+    body {
+        background: radial-gradient(circle, rgb(15, 15, 15),rgb(19, 38, 80));
+        text-align: center;
+    }
+
+    #login {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    #login form {
+        display: inline-block;
+        max-width: 400px;
+        width: 100%;
+        color:white;
+        font-family:Arial;
+    }
+
+    #login form input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    #login form button {
+        width:66%;
+        padding: 6px;
+        font-size: 20px;
+        border: 1px solid #ff0000;
+        background-color: #ff0000;
+    } 
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo Image">
+    </header>
+
+    <section id="login">
+        <form id="login-form">
+            <label for="username"><b>Username:</b></label>
+            <input type="text" id="username" name="username" required>
+            <label for="password"><b>Password:</b></label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit"><b>Login</b></button>
+        </form>
+        <p><a href='https://login.singpass.gov.sg/main?scope=openid&response_type=code&redirect_uri=https%3A%2F%2Fwww.singpass.gov.sg%2Fhome%2Fui%2Fcallback%2Fauth&state=48c8749f-6cfd-4a5d-bd86-b9208e0fcee8&nonce=3c537362-402e-49eb-8c12-202ac22b6cef&client_id=ntmRnh1tflHVnWsik9AN1Fn2Cx7X8gVw&pwd_enabled=true'>
+            <img src="singpassimg.png" alt="Singpass Image" height="36"></a></p>
+        <p><a href='signup.html'>Sign Up</a></p>
+        <div id="verifyfingerprint" onclick="save()">
+            <p><a href="home.html"><img src="fingerprint.png" alt="fingerprint" width="40"></a></p>
+    </section>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            // Validate the form (additional validation can be added here)
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (username && password) {
+                event.preventDefault();
+                // Redirect to home page after login
+                window.location.href = 'home.html';
+            }
+        });
+        // Verify Fingerprint and redirect to home page
+        function save() {
+                alert("Fingerprint Verified");
+                document.getElementById("verifyfingerprint");
+            }
+    </script>
+
+</body>
+</html>
