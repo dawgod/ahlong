@@ -43,14 +43,9 @@
 </head>
 <body>
     <header>
-        <img src="../images/logo.png" alt="Logo Image"> 
+        <img src="logo.png" alt="Logo Image"> 
         <h1>LOAN HISTORY</h1>  
     </header>
-    <section id="section1">
-        <b><p id="loanstartdate"></p></b>
-        <b><p id="loanamount"></p></b>
-        <p><b>Active Loan</b></p>
-    </section>
     <p><b>2024-01-01</b></p>
     <p><b>Loan Amount: $3000</b></p>
     <p><b>Paid On 2024-05-05</b></p>
@@ -76,23 +71,16 @@
     <br>
     <br>
     <br>
-    <script>
-        const loanamount = localStorage.getItem('loanamount');
-        const loanstartdate = localStorage.getItem('loanstartdate');
-        const loanduedate = localStorage.getItem('loanduedate');;
-        document.getElementById('loanamount').innerHTML = `Loan Amount: $${loanamount}`;
-        document.getElementById('loanstartdate').innerHTML = `${loanstartdate}`;
-    </script>
 </body>
 
 <footer>
     <nav class="navbar">
         <ul class="navbar-menu">
-            <li><a href="home1.html"><img src="../navbarimg/home.png" alt="Home"></a></li>
-            <li><a href="history1.html"><img src="../navbarimg/history.png" alt="History"></a></a></li>
-            <li><a href="loan1.html"><img src="../navbarimg/loan.png" alt="Loan"></a></a></li>
-            <li><a href="news1.html"><img src="../navbarimg/news.png" alt="News"></a></a></li>
-            <li><a href="settings.html"><img src="../navbarimg/settings.png" alt="Settings"></a></a></li>
+            <li><a href="home2.html"><img src="home.png" alt="Home"></a></li>
+            <li><a href="history.html"><img src="history.png" alt="History"></a></a></li>
+            <li><a href="loan.html"><img src="loan.png" alt="Loan"></a></a></li>
+            <li><a href="news.html"><img src="news.png" alt="News"></a></a></li>
+            <li><a href="settings.html"><img src="settings.png" alt="Settings"></a></a></li>
         </ul>
     </nav>
 </footer>

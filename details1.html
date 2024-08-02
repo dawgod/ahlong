@@ -72,30 +72,31 @@
 <body>
     <header>
         <section id="backbutton">
-            <a href="home.html"><b><- Back</b></a>
+            <a href="home1.html"><b><- Back</b></a>
         </section>
     </header>
 
     <section id="currentloanamount">
         <p><b>CURRENT LOAN:</b></p>
-        <h1>$3000</h1>
-        <p>Applied on: 2024-01-01</p>
-        <p>Due on: 2024-12-31</p>
+        <h1><p id=loanamount></p></h1>
+        <p id="loanstartdate"></p>
+        <p id="loanduedate"></p>
         </section>
     </section>
 
     <br>
     <p><b>Interest Rate (per annum):</b> 6.9%</p>
-    <p><b>Amount Payable as of 2024-05-05:</b> $3069.30</p>
+    <p><b>Amount Payable as of now:</b> N/A</p>
     <br>
     <br>
     <br>
 
-    <div class="paymentbutton" onclick="paymentbutton()">
+    <div class="deny" onclick="deny()">
         <section id="paymentbutton">
             <b>MAKE PAYMENT</b>
         </section>
     </div>
+
     <br>
     <br>
     <br>
@@ -104,19 +105,34 @@
     <br>
     <br>
     <script>
-        function paymentbutton(){
-            window.location.href='payconfirmationpage.html'
+        // Retrieve each item separately from loan
+        const loanamount = localStorage.getItem('loanamount');
+        const loanstartdate = localStorage.getItem('loanstartdate');
+        const loanduedate = localStorage.getItem('loanduedate');
+        const loaninterest = localStorage.getItem('loaninterest');
+        const name = localStorage.getItem('name');
+        const account = localStorage.getItem('account');
+        document.getElementById('loanamount').innerHTML = `$${loanamount}`;
+        document.getElementById('loanstartdate').innerHTML = `Applied on: ${loanstartdate}`;
+        document.getElementById('loanduedate').innerHTML = `Due on: ${loanduedate}`;
+        document.getElementById('loaninterest').innerHTML = `Interest: ${loaninterest}`;
+        console.log(`Loan Amount: $${loanamount}`);
+        console.log(`Loan Start Date: ${loanstartdate}`);
+        console.log(`Loan Due Date: ${loanduedate}`);
+        console.log(`Loan Interest: ${loaninterest}`);
+        function deny(){
+            alert("Loan Payment Denied.");
         }
     </script>
 </body>
 <footer>
     <nav class="navbar">
         <ul class="navbar-menu">
-            <li><a href="home.html"><img src="../navbarimg/home.png" alt="Home"></a></li>
-            <li><a href="history.html"><img src="../navbarimg/history.png" alt="History"></a></a></li>
-            <li><a href="loan.html"><img src="../navbarimg/loan.png" alt="Loan"></a></a></li>
-            <li><a href="news.html"><img src="../navbarimg/news.png" alt="News"></a></a></li>
-            <li><a href="settings.html"><img src="../navbarimg/settings.png" alt="Settings"></a></a></li>
+            <li><a href="home1.html"><img src="home.png" alt="Home"></a></li>
+            <li><a href="history1.html"><img src="history.png" alt="History"></a></a></li>
+            <li><a href="loan1.html"><img src="loan.png" alt="Loan"></a></a></li>
+            <li><a href="news1.html"><img src="news.png" alt="News"></a></a></li>
+            <li><a href="settings.html"><img src="settings.png" alt="Settings"></a></a></li>
         </ul>
     </nav>
 </footer>

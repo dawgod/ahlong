@@ -29,14 +29,13 @@
 
     body {
         font-family: Arial;
-        font-size: 20px;
     }
 
     #backbutton {
         background-color: grey;
         color: white;
         padding: 8px;
-        width: 80px;
+        width:60px;
         text-align: center;
         font-family: Arial;        
     }
@@ -51,16 +50,11 @@
         color: white;
         padding: 1px;
         text-align: center;
-        font-size: 20px;
+        font-size: 30px;
     }
 
     #currentloanamount h1 {
         font-size: 80px;
-    }
-
-    #section1 {
-        text-align: left;
-        font-size: 20px;
     }
 
     #paymentbutton {
@@ -72,47 +66,57 @@
         margin:auto;
         border: 1px solid black;
         font-size: 20px;;
-        }         
+        }  
     </style>
 </head>
 <body>
     <header>
         <section id="backbutton">
-            <a href="details.html"><b><- Back</b></a>
+            <a href="home.html"><b><- Back</b></a>
         </section>
     </header>
+
     <section id="currentloanamount">
-        <section id="section1">
-            <p><b>Loan:</b> $3000</p>
-            <p><b>Interest Rate (per annum):</b> 6.9%</p>
+        <p><b>CURRENT LOAN:</b></p>
+        <h1>$3000</h1>
+        <p>Applied on: 2024-01-01</p>
+        <p>Due on: 2024-12-31</p>
         </section>
-        <p><b>Amount payable as of 2024-05-05:<b></p>
-        <h1>$3069.30</h1>
     </section>
 
-    
-    <p>Applied on: 2024-01-01</p>
-    <p>Due on: 2024-12-31</p>
+    <br>
+    <p><b>Interest Rate (per annum):</b> 6.9%</p>
+    <p><b>Amount Payable as of 2024-05-05:</b> $3069.30</p>
+    <br>
+    <br>
+    <br>
+
     <div class="paymentbutton" onclick="paymentbutton()">
         <section id="paymentbutton">
-            <b>CONFIRM</b>
+            <b>MAKE PAYMENT</b>
         </section>
     </div>
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <script>
         function paymentbutton(){
-            window.location.href='paymenttransactionpage.html';
+            window.location.href='payconfirmationpage.html'
         }
     </script>
 </body>
 <footer>
     <nav class="navbar">
         <ul class="navbar-menu">
-            <li><a href="home.html"><img src="../navbarimg/home.png" alt="Home"></a></li>
-            <li><a href="history.html"><img src="../navbarimg/history.png" alt="History"></a></a></li>
-            <li><a href="loan.html"><img src="../navbarimg/loan.png" alt="Loan"></a></a></li>
-            <li><a href="news.html"><img src="../navbarimg/news.png" alt="News"></a></a></li>
-            <li><a href="settings.html"><img src="../navbarimg/settings.png" alt="Settings"></a></a></li>
+            <li><a href="home.html"><img src="home.png" alt="Home"></a></li>
+            <li><a href="history.html"><img src="history.png" alt="History"></a></a></li>
+            <li><a href="loan.html"><img src="loan.png" alt="Loan"></a></a></li>
+            <li><a href="news.html"><img src="news.png" alt="News"></a></a></li>
+            <li><a href="settings.html"><img src="settings.png" alt="Settings"></a></a></li>
         </ul>
     </nav>
 </footer>

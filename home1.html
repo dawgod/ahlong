@@ -93,12 +93,12 @@
 </head>
 <body>
     <header>
-        <img src="../images/logo.png" alt="Logo Image"><h1>WELCOME BACK, YURI ASA!</h1>
+        <img src="logo.png" alt="Logo Image"><h1>WELCOME BACK, YURI ASA!</h1>
     </header>
 
     <section id="bankbalance">
         <p><b>BANK BALANCE:</b></p>
-        <h1>$3094.11</h1>
+        <h1><p id="result"></p></h1>
         <section id="date">
             <p><span id="update"></span></p>
         </section>
@@ -107,12 +107,12 @@
     <section id="loandetails">
         <p><b>CURRENT LOAN:</b></p>
         <section id="loanamount">
-            <b>$3000</b>
+            <b><p id=loanamount></p></b>
         </section>
         <section id="loandates">
-            <p>START DATE: 2024-01-01</p>
-            <p>END DATE: 2024-12-31</p>
-            <p>INTEREST: 6.9%</p>
+            <p id="loanstartdate"></p>
+            <p id="loanduedate"></p>
+            <p id="loaninterest"></p>
         </section>
         <div class="details" onclick="details()">
             <section id="details">
@@ -153,8 +153,26 @@
     <script>
         var lastupdate = "Last Updated:" + " " + new Date();
         document.getElementById("update").innerHTML = lastupdate;
+        // Retrieve each item separately from loan
+        const loanamount = localStorage.getItem('loanamount');
+        const loanstartdate = localStorage.getItem('loanstartdate');
+        const loanduedate = localStorage.getItem('loanduedate');
+        const loaninterest = localStorage.getItem('loaninterest');
+        const name = localStorage.getItem('name');
+        const account = localStorage.getItem('account');
+        document.getElementById('loanamount').innerHTML = `$${loanamount}`;
+        document.getElementById('loanstartdate').innerHTML = `Start Date: ${loanstartdate}`;
+        document.getElementById('loanduedate').innerHTML = `Due Date: ${loanduedate}`;
+        document.getElementById('loaninterest').innerHTML = `Interest: ${loaninterest}`;
+        console.log(`Loan Amount: $${loanamount}`);
+        console.log(`Loan Start Date: ${loanstartdate}`);
+        console.log(`Loan Due Date: ${loanduedate}`);
+        console.log(`Loan Interest: ${loaninterest}`);
+        const x = parseFloat(localStorage.getItem('loanamount'));
+        var result= x + 24.81;
+        document.getElementById('result').innerHTML= `$${result}`;
         function details() {
-            window.location.href='details.html'
+            window.location.href='details1.html'
         }
     </script>
 </body>
@@ -162,11 +180,11 @@
 <footer>
     <nav class="navbar">
         <ul class="navbar-menu">
-            <li><a href="home.html"><img src="../navbarimg/home.png" alt="Home"></a></li>
-            <li><a href="history2.html"><img src="../navbarimg/history.png" alt="History"></a></a></li>
-            <li><a href="loan.html"><img src="../navbarimg/loan.png" alt="Loan"></a></a></li>
-            <li><a href="news.html"><img src="../navbarimg/news.png" alt="News"></a></a></li>
-            <li><a href="settings.html"><img src="../navbarimg/settings.png" alt="Settings"></a></a></li>
+            <li><a href="home1.html"><img src="home.png" alt="Home"></a></li>
+            <li><a href="history1.html"><img src="history.png" alt="History"></a></a></li>
+            <li><a href="loan1.html"><img src="loan.png" alt="Loan"></a></a></li>
+            <li><a href="news1.html"><img src="news.png" alt="News"></a></a></li>
+            <li><a href="settings.html"><img src="settings.png" alt="Settings"></a></a></li>
         </ul>
     </nav>
 </footer>
